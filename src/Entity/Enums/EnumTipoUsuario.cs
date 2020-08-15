@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Entity.Enums
+﻿namespace Entity.Enums
 {
-    class EnumTipoUsuario
+    public enum EnumTipoUsuario
     {
+        Administrador = 1,
+        Comum = 2
     }
 }
