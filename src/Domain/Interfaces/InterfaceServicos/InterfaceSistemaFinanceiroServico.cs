@@ -1,4 +1,4 @@
-﻿using Entity.Entities.Sismtemas;
+﻿using Entity.Entities.Sistemas;
 
 namespace Domain.Interfaces.InterfaceServicos
 {

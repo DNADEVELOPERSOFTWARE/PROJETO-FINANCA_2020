@@ -1,5 +1,5 @@
 ﻿using Domain.Interfaces.IGenerics;
-using Entity.Entities.Sismtemas;
+using Entity.Entities.Sistemas;
 using System.Collections.Generic;
 
 namespace Domain.Interfaces.IUsuarioSistemaFInanceiro

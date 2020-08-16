@@ -1,4 +1,4 @@
-﻿using Entity.Entities.Sismtemas;
+﻿using Entity.Entities.Sistemas;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

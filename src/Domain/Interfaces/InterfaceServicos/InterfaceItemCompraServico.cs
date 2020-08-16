@@ -4,7 +4,7 @@ namespace Domain.Interfaces.InterfaceServicos
 {
     public interface InterfaceItemCompraServico
     {
-        void AdicionarItemCompra(ItemCompra ItemCompra);
-        void AtualizarItemCompra(ItemCompra ItemCompra);
+        void AdicionarItemCompra(ItemCompra itemCompra);
+        void AtualizarItemCompra(ItemCompra itemCompra);
     }
 }

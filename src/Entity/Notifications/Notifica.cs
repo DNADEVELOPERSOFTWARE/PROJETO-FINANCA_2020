@@ -25,10 +25,11 @@ namespace Entity.Notifications
             //VALIDA CAMPOS VAZIOS
             if(string.IsNullOrWhiteSpace(valor) || string.IsNullOrWhiteSpace(nomePropriedade))
             {
-                notificacoes.Add(new Notifica {
+                notificacoes.Add(new Notifica
+                {
                     Mensagem = "Campo obrigatório",
                     NomePropriedade = nomePropriedade
-                    ));
+                });
                 return false;
             }
             return true;

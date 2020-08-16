@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Entity.Entities.Sismtemas
+namespace Entity.Entities.Sistemas
 {
     [Table("SistemaFinanceiro")]
     public class SistemaFinanceiro : Base
