@@ -1,16 +1,17 @@
-﻿using Domain.Interfaces.ICompras;
+﻿using Domain.Interfaces.IFluxos.ICompras;
 using Domain.Interfaces.InterfaceServicos;
 using Entity.Entities.Fluxos.Compras;
 using System;
 
 namespace Domain.Services.FluxoServicos.ComprasServicos
 {
-    public class ItemCompraServico : InterfaceItemCompraServico
+    public class ItemCompraServico : IItemCompraServico
     {
-        private readonly InterfaceItemCompra _interfaceItemCompra;
-        public ItemCompraServico(InterfaceItemCompra interfaceItemCompra)
+        private readonly IItemCompra _iItemCompra;
+
+        public ItemCompraServico(IItemCompra iItemCompra)
         {
-            _interfaceItemCompra = interfaceItemCompra;
+            _iItemCompra = iItemCompra;
         }
 
         public void AdicionarItemCompra(ItemCompra itemCompra)
@@ -23,7 +24,7 @@ namespace Domain.Services.FluxoServicos.ComprasServicos
             var valido = itemCompra.ValidaPropriedadeString(itemCompra.Nome, "Nome");
 
             if (valido)
-                _interfaceItemCompra.Add(itemCompra);
+                _iItemCompra.Add(itemCompra);
         }
 
         public void AtualizarItemCompra(ItemCompra itemCompra)
@@ -38,7 +39,7 @@ namespace Domain.Services.FluxoServicos.ComprasServicos
 
             var valido = itemCompra.ValidaPropriedadeString(itemCompra.Nome, "Nome");
             if (valido)
-                _interfaceItemCompra.Update(itemCompra);
+                _iItemCompra.Update(itemCompra);
         }
     }
 }

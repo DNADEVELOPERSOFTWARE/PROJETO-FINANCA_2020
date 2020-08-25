@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Infrastructure.Repositories.RepositoriosCategorias
 {
-    public class RepositorioCategoria : RepositorioGenerico<Categoria>, InterfaceCategoria
+    public class RepositorioCategoria : RepositorioGenerico<Categoria>, ICategoria
     {
 
         private readonly DbContextOptions<Contexto> _OptionsBuilder;

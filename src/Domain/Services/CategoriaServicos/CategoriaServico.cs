@@ -1,26 +1,26 @@
 ﻿using Domain.Interfaces.ICategorias;
 using Domain.Interfaces.InterfaceServicos;
-using Domain.Interfaces.IUsuarioSistemaFInanceiro;
+using Domain.Interfaces.ISistemas.IUsuarioSistemaFinanceiro;
 using Entity.Entities.Categorias;
 
 namespace Domain.Services.CategoriaServicos
 {
-    public class CategoriaServico : InterfaceCategoriaServico
+    public class CategoriaServico : ICategoriaServico
     {
-        private readonly InterfaceUsuarioSistemaFInanceiro _interfaceUsuarioSistemaFinanceiro;
-        private readonly InterfaceCategoria _interfaceCategoria;
+        private readonly IUsuarioSistemaFinanceiro _iUsuarioSistemaFinanceiro;
+        private readonly ICategoria _iCategoria;
 
-        public CategoriaServico(InterfaceUsuarioSistemaFInanceiro interfaceUsuarioSistemaFinanceiro, InterfaceCategoria interfaceCategoria)
+        public CategoriaServico(IUsuarioSistemaFinanceiro iUsuarioSistemaFinanceiro, ICategoria iCategoria)
         {
-            _interfaceUsuarioSistemaFinanceiro = interfaceUsuarioSistemaFinanceiro;
-            _interfaceCategoria = interfaceCategoria;
+            _iUsuarioSistemaFinanceiro = iUsuarioSistemaFinanceiro;
+            _iCategoria = iCategoria;
         }
         public void AdicionarCategoria(Categoria categoria)
         {
             var valido = categoria.ValidaPropriedadeString(categoria.Nome, "Nome");
             if (valido)
             {
-                _interfaceCategoria.Add(categoria);
+                _iCategoria.Add(categoria);
             }
         }
 
@@ -29,7 +29,7 @@ namespace Domain.Services.CategoriaServicos
             var valido = categoria.ValidaPropriedadeString(categoria.Nome, "Nome");
             if (valido)
             {
-                _interfaceCategoria.Update(categoria);
+                _iCategoria.Update(categoria);
             }
         }
     }

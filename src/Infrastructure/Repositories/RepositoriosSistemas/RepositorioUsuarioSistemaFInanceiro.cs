@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces.IUsuarioSistemaFInanceiro;
+﻿using Domain.Interfaces.ISistemas.IUsuarioSistemaFinanceiro;
 using Entity.Entities.Sistemas;
 using Infrastructure.Configurations.Data;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Infrastructure.Repositories.RepositoriosSistemas
 {
-   public  class RepositorioUsuarioSistemaFInanceiro : RepositorioGenerico<UsuarioSistemaFinanceiro>, InterfaceUsuarioSistemaFInanceiro
+    public  class RepositorioUsuarioSistemaFInanceiro : RepositorioGenerico<UsuarioSistemaFinanceiro>, IUsuarioSistemaFinanceiro
     {
         private readonly DbContextOptions<Contexto> _OptionsBuilder;
 

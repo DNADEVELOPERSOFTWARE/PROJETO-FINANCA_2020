@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces.ICompras;
+﻿using Domain.Interfaces.IFluxos.ICompras;
 using Entity.Entities.Fluxos.Compras;
 using Infrastructure.Configurations.Data;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Infrastructure.Repositories.RepositoriosFluxos.RepositoriosCompras
 {
-    public class RepositorioCompra : RepositorioGenerico<Compra>, InterfaceCompra
+    public class RepositorioCompra : RepositorioGenerico<Compra>, ICompra
     {
         private readonly DbContextOptions<Contexto> _OptionsBuilder;
         public RepositorioCompra()

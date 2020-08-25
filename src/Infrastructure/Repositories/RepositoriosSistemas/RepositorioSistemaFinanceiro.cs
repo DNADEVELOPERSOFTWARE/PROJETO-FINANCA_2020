@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces.ISistemaFinanceiro;
+﻿using Domain.Interfaces.ISistemas.ISistemaFinanceiro;
 using Entity.Entities.Sistemas;
 using Infrastructure.Configurations.Data;
 using Microsoft.EntityFrameworkCore;
@@ -7,13 +7,15 @@ using System.Linq;
 
 namespace Infrastructure.Repositories.RepositoriosSistemas
 {
-    public class RepositorioSistemaFinanceiro : RepositorioGenerico<SistemaFinanceiro>, InterfaceSistemaFinanceiro
+    public class RepositorioSistemaFinanceiro : RepositorioGenerico<SistemaFinanceiro>, ISistemaFinanceiro
     {
         private readonly DbContextOptions<Contexto> _OptionBuilder;
+
         public RepositorioSistemaFinanceiro()
         {
             _OptionBuilder = new DbContextOptions<Contexto>();
         }
+
         public IList<SistemaFinanceiro> ListaSistemasUsuario(string emailUsuario)
         {
             using (var banco = new Contexto(_OptionBuilder))

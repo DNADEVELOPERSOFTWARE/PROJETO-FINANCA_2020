@@ -1,24 +1,21 @@
 ﻿using Domain.Interfaces.InterfaceServicos;
-using Domain.Interfaces.IUsuarioSistemaFInanceiro;
+using Domain.Interfaces.ISistemas.IUsuarioSistemaFinanceiro;
 using Entity.Entities.Sistemas;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Services.SistemaService
 {
-    public class UsuarioSistemaFinanceiroServico : InterfaceUsuarioSistemaFinanceiroServico
+    public class UsuarioSistemaFinanceiroServico : IUsuarioSistemaFinanceiroServico
     {
-        private readonly InterfaceUsuarioSistemaFInanceiro _interfaceUsuarioSistemaFInanceiro;
+        private readonly IUsuarioSistemaFinanceiro _iUsuarioSistemaFInanceiro;
 
-        public UsuarioSistemaFinanceiroServico(InterfaceUsuarioSistemaFInanceiro interfaceUsuarioSistemaFInanceiro)
+        public UsuarioSistemaFinanceiroServico(IUsuarioSistemaFinanceiro iUsuarioSistemaFInanceiro)
         {
-            _interfaceUsuarioSistemaFInanceiro = interfaceUsuarioSistemaFInanceiro;
+            _iUsuarioSistemaFInanceiro = iUsuarioSistemaFInanceiro;
         }
 
         public void CadastrarUsuarioNoSistema(UsuarioSistemaFinanceiro usuarioSistemaFinanceiro)
         {
-            _interfaceUsuarioSistemaFInanceiro.Add(usuarioSistemaFinanceiro);
+            _iUsuarioSistemaFInanceiro.Add(usuarioSistemaFinanceiro);
         }
     }
 }

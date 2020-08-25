@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces.IGenerics;
+﻿using Domain.Interfaces;
 using Infrastructure.Configurations.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32.SafeHandles;
@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Infrastructure.Repositories
 {
-    public class RepositorioGenerico<T> : InterfaceGenerica<T>, IDisposable where T : class
+    public class RepositorioGenerico<T> : IGenerica<T>, IDisposable where T : class
     {
 
         private readonly DbContextOptions<Contexto> _OptionsBuilder;

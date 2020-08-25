@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces.IDespesas;
+﻿using Domain.Interfaces.IFluxos.IDespesas;
 using Entity.Entities.Fluxos.Despesa;
 using Infrastructure.Configurations.Data;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Infrastructure.Repositories.RepositoriosFluxos.RespositoriosDespesas
 {
-    public class RepositorioDespesa : RepositorioGenerico<Despesa>, InterfaceDespesa
+    public class RepositorioDespesa : RepositorioGenerico<Despesa>, IDespesa
     {
         private readonly DbContextOptions<Contexto> _OptionsBuilder;
 

@@ -1,16 +1,16 @@
-﻿using Domain.Interfaces.IDespesas;
+﻿using Domain.Interfaces.IFluxos.IDespesas;
 using Domain.Interfaces.InterfaceServicos;
 using Entity.Entities.Fluxos.Despesa;
 using System;
 
 namespace Domain.Services.FluxoServicos.DespesasServico
 {
-    public class DespesaServico : InterfaceDespesaServico
+    public class DespesaServico : IDespesaServico
     {
-        private readonly InterfaceDespesa _interfaceDespesa;
-        public DespesaServico(InterfaceDespesa interfaceDespesa)
+        private readonly IDespesa _iDespesa;
+        public DespesaServico(IDespesa iDespesa)
         {
-            _interfaceDespesa = interfaceDespesa;
+            _iDespesa = iDespesa;
         }
 
         public void AdicionarDespesa(Despesa despesa)
@@ -22,7 +22,7 @@ namespace Domain.Services.FluxoServicos.DespesasServico
 
             var valido = despesa.ValidaPropriedadeString(despesa.Nome, "Nome");
             if (valido)
-                _interfaceDespesa.Add(despesa);
+                _iDespesa.Add(despesa);
 
         }
 
@@ -38,7 +38,7 @@ namespace Domain.Services.FluxoServicos.DespesasServico
 
             var valido = despesa.ValidaPropriedadeString(despesa.Nome, "Nome");
             if (valido)
-                _interfaceDespesa.Add(despesa);
+                _iDespesa.Add(despesa);
 
         }
     }
