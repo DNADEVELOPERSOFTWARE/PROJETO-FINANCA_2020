@@ -10,6 +10,7 @@ namespace Entity.Entities.Fluxos.Despesa
     public class Despesa : Base
     {
         [Display(Name = "Valor")]
+        [Column(TypeName ="decimal(18,2)")]
         public decimal Valor { get; set; }
 
         [Display(Name = "Mês")]

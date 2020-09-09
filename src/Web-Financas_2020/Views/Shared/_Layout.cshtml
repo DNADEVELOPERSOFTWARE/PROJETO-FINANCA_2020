@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Entity.Entities.Users.ApplicationUser> SignInManager
+@inject UserManager<Entity.Entities.Users.ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>@ViewData["Title"] - Finanças CSS</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <header class="menu">
+        <div class="menu-container">
+            <a class="menu-logo" href="#"><img src="~/img/icons/Group 1.svg" alt="DNA-Finanças" /></a>
+           
+            <div class="menu-container-login">
+                <partial name="_LoginPartial" />
+            </div>
+            <nav class="menu-nav">
+                <ul>
+                    <li><a href="#">Nosso sistema</a></li>
+                    <li><a href="#">Administrador</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+    <div class="container">
+        <main class="intro">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>
+                Este é um projeto teste. Saiba mais em dnasoftware.com<br>
+                Rua Analandia nº 474, São Joaquim- Santa Bárbar d'Oeste- SP
+            </p>
+            <img src="~/img/brafe.png" alt="BrasFé" />
+        </div>
+    </footer>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - BrasFe_com_CSS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

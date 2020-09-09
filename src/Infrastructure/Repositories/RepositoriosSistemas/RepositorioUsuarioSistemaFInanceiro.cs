@@ -7,11 +7,11 @@ using System.Linq;
 
 namespace Infrastructure.Repositories.RepositoriosSistemas
 {
-    public  class RepositorioUsuarioSistemaFInanceiro : RepositorioGenerico<UsuarioSistemaFinanceiro>, IUsuarioSistemaFinanceiro
+    public  class RepositorioUsuarioSistemaFinanceiro : RepositorioGenerico<UsuarioSistemaFinanceiro>, IUsuarioSistemaFinanceiro
     {
         private readonly DbContextOptions<Contexto> _OptionsBuilder;
 
-        public RepositorioUsuarioSistemaFInanceiro()
+        public RepositorioUsuarioSistemaFinanceiro()
         {
             _OptionsBuilder = new DbContextOptions<Contexto>();
         }

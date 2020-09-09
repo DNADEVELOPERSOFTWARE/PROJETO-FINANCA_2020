@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Entity.Entities.Users.ApplicationUser> SignInManager
+@inject UserManager<Entity.Entities.Users.ApplicationUser> UserManager
+
+<ul class="menu-nav-login">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li >
+        <a  class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Bem vindo @User.Identity.Name!</a>
+    </li>
+    <li >
+        <form  class="form-login" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button class="btn-login"  type="submit" >Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li >
+        <a class="nav-link text-left" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li >
+        <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    </li>
+}
+</ul>

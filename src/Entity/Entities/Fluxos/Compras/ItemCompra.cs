@@ -8,6 +8,7 @@ namespace Entity.Entities.Fluxos.Compras
     public class ItemCompra : Base
     {
         [Display(Name = "Valor")]
+        [Column(TypeName ="decimal(18,2)")]
         public decimal Valor { get; set; }
 
         [Display(Name = "Comprado")]

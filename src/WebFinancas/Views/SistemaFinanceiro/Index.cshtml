@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Entity.Entities.Sistemas.SistemaFinanceiro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Sistemas Financeiros</h4>
+                        @*<p class="card-category"> Aqui estão seus sistemas de finanças</p>*@
+                        <p class="card-category">
+                            <i class="material-icons">class</i>
+                            <a style="color:white" asp-action="Create">Criar um Sistema Financeiro</a>
+                        </p>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>Ações</th>
+
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Nome)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                                                @*|@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Nome)
+                                            </td>
+
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@*<h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ano)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DiaFechamento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GerarCopiaDespesa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MesCopia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnoCopia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaFechamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GerarCopiaDespesa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MesCopia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnoCopia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@

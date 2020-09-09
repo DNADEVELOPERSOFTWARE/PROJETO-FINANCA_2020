@@ -3,12 +3,15 @@ using Entity.Entities.Categorias;
 using Entity.Entities.Fluxos.Compras;
 using Entity.Entities.Fluxos.Despesa;
 using Entity.Entities.Sistemas;
+using Entity.Entities.Users;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Configurations.Data
 {
 
-    public class Contexto : DbContext
+    public class Contexto : IdentityDbContext<ApplicationUser>
     {
 
 
@@ -34,6 +37,53 @@ namespace Infrastructure.Configurations.Data
             base.OnConfiguring(optionsBuilder);
         }
 
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    //Mudando a tabela ApplicationUser para UsuariosSistema
+        //    builder.Entity<ApplicationUser>().ToTable("UsuariosSiatema").HasKey(t => t.Id);
+
+
+        //    base.OnModelCreating(builder);
+        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+           //MODIFICANDO OS NOMES DAS TABELAS NO IDENTITY
+            modelBuilder.Entity<ApplicationUser>(b =>
+            {
+                b.ToTable("UsuarioIDentity").HasKey(b => b.Id);
+            });
+            modelBuilder.Entity<IdentityUserClaim<string>>(b =>
+            {
+                b.ToTable("ClaimUsuarios");
+            });
+
+            modelBuilder.Entity<IdentityUserLogin<string>>(b =>
+            {
+                b.ToTable("LoginsUsuario");
+            });
+
+            modelBuilder.Entity<IdentityUserToken<string>>(b =>
+            {
+                b.ToTable("TokensUsuario");
+            });
+
+            modelBuilder.Entity<IdentityRole>(b =>
+            {
+                b.ToTable("Papeis");
+            });
+
+            modelBuilder.Entity<IdentityRoleClaim<string>>(b =>
+            {
+                b.ToTable("ClaimsPapeis");
+            });
+
+            modelBuilder.Entity<IdentityUserRole<string>>(b =>
+            {
+                b.ToTable("PapeisUsuario");
+            });
+        }
         private string GetStringConectionConfig()
         {
             // ambiene  de Produção
