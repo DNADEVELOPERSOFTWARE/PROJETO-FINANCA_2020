@@ -1,0 +1,85 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+
+<div class="container">
+    <div class="container-login">
+        <section class="login">
+            <form id="account-login" method="post">
+                <h2>Entre no Sistema</h2>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="login-item">
+                    <div class="form-login">
+                        <label class="form-label" asp-for="Input.Email"></label>
+                        <input type="text" placeholder="Digite seu e-mail" asp-for="Input.Email" class="form-login-input" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-login">
+                        <label class="form-label" asp-for="Input.Password"></label>
+                        <input type="password" placeholder="Digite sua senha" asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-btn">
+                    <button type="submit" class="form-login-btn">Entrar</button>
+                </div>
+                <div class="form-login">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Esqueceu da sua senha?</a>
+                    </p>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Criar uma nova conta</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+@*caso precise fazer login com porvedor exerton
+<div class="col-md-6 col-md-offset-2">
+    <section>
+        <h4>Use another service to log in.</h4>
+        <hr />
+        @{
+            if ((Model.ExternalLogins?.Count ?? 0) == 0)
+            {
+                <div>
+                    <p>
+                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                        for details on setting up this ASP.NET application to support logging in via external services.
+                    </p>
+                </div>
+            }
+            else
+            {
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                    <div>
+                        <p>
+                            @foreach (var provider in Model.ExternalLogins)
+                            {
+                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                            }
+                        </p>
+                    </div>
+                </form>
+            }
+        }
+    </section>
+</div>*@

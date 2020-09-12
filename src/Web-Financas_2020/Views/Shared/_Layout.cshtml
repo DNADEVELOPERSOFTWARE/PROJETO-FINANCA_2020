@@ -9,8 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>@ViewData["Title"] - Finanças CSS</title>
     <link rel="stylesheet" href="~/css/style.css" />
+    
+
 </head>
 <body>
+    @if (SignInManager.IsSignedIn(User))
+    {
     <header class="menu">
         <div class="menu-container">
             <a class="menu-logo" href="#"><img src="~/img/icons/Group 1.svg" alt="DNA-Finanças" /></a>
@@ -29,11 +33,14 @@
             
         </div>
     </header>
+    }
     <div class="container">
         <main class="intro">
             @RenderBody()
         </main>
     </div>
+    @if (SignInManager.IsSignedIn(User))
+    {
     <footer class="footer">
         <div class="footer-container">
             <p>
@@ -44,7 +51,7 @@
             <img src="~/img/icons/Vector 1.svg" alt="BrasFé" />
         </div>
     </footer>
-   
+    }
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -1,0 +1,107 @@
+﻿/* reset */
+/*Reseta todas as configurações default dos browsers*/
+
+body, h1, h2, h3, p, ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+body {
+  background: url(../img/svg/login/bg-login2.png)no-repeat center center;
+  background-size: cover;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* login */
+
+.container-login {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#account-login{
+  font-family: Roboto mono;
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #703EBB;
+  margin: 0 auto;
+  padding: 0 30px;
+  background-color: rgba(255,255,255,0.6);
+}
+
+.login a {
+  font-size: 1.125em;
+  line-height: 1.4em;
+  text-decoration: none;
+  color: #703EBB;
+}
+
+.login h2 {
+  font-family: Roboto;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1.5em;
+  color: #703EBB;
+  margin: 20px 0 ;
+}
+
+.login h4 {
+  font-size: 1.125em;
+  line-height: 1.4em;
+  font-style: italic;
+  font-weight: bold;
+
+  color: #703EBB;
+}
+
+.form-login {
+  width: 410px;
+  margin: 10px auto 30px;
+  float: left;
+}
+
+  .form-login input {
+    width: 420px;
+    border: 3px solid #703ebb;
+    font-size: 1.5em;
+    font-style: italic;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #703EBB;
+    padding: 10px;
+    float: left;
+  }
+
+.form-label {
+  display: none;
+}
+
+.form-check {
+  font-size: 1.125em;
+  line-height: 1.4em;
+  color: #703EBB;
+  font-weight: bold;
+  padding: 0 10px 0;
+}
+
+.form-check label{
+  margin: 0;
+}
+.form-login-btn {
+  background: rgba(153,50,205,0.1);
+  border: 3px solid #9c27b0;
+  text-transform: uppercase;
+  font-family: Roboto, mono;
+  font-size: 1.5em;
+  width: 140px;
+  padding: 13px 0;
+  margin: 30px 0px;
+  color: #fff;
+  cursor: pointer;
+}

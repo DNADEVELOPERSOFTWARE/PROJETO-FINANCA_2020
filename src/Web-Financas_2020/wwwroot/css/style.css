@@ -8,7 +8,7 @@ body, h1, h2, h3, p, ul {
 
 /*Defina a tipografia e a cor a ser usada no corpo do layout*/
 body {
-  font-family:Roboto mono 
+  font-family:Roboto mono; 
   color: #252525;
 }
 
@@ -206,7 +206,7 @@ body {
   background: #252525;
   border: none;
   text-transform: uppercase;
-  font-family: Georgia, serif;
+  font-family: Roboto, mono;
   font-size: 1.5em;
   width: 140px;
   padding: 13px 0;
@@ -217,8 +217,7 @@ body {
 /* Footer */
 
 .footer {
-  background: #2D9CDB;
-  
+  background: #703ebb;
   padding: 40px 0;
 }
 
