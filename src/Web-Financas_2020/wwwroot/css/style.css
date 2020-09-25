@@ -78,7 +78,8 @@ body {
 }
 
 .menu-container-login {
-  vertical-align: inherit;
+  
+  /*vertical-align: inherit;*/
   display: block;
   float: right;
   margin-right: 10px;

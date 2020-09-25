@@ -5,26 +5,32 @@ body, h1, h2, h3, p, ul {
   padding: 0px;
   margin: 0px;
 }
-
-
 body {
-  background: url(../img/svg/login/bg-login2.png)no-repeat center center;
-  background-size: cover;
+   
+    background: linear-gradient(rgba(50,205,50,0.1),rgba(50,205,50,0.3)), url(../img/svg/login/bg-login2.png);
+ 
 }
-
 * {
   box-sizing: border-box;
 }
 
+.text-danger {
+  font-size: 1.125em;
+  line-height: 1.4em;
+  font-style: italic;
+  font-weight: bold;
+  color: #FFf;
+  font-weight:bolder;
+}
 /* login */
 
 .container-login {
   max-width: 960px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px;
 }
 
-#account-login{
+#account-login {
   font-family: Roboto mono;
   width: 500px;
   border-radius: 10px;
@@ -32,14 +38,14 @@ body {
   border: 3px solid #703EBB;
   margin: 0 auto;
   padding: 0 30px;
-  background-color: rgba(255,255,255,0.6);
 }
 
 .login a {
   font-size: 1.125em;
   line-height: 1.4em;
   text-decoration: none;
-  color: #703EBB;
+  /*color: #703EBB;*/
+  color: #fff;
 }
 
 .login h2 {
@@ -47,7 +53,8 @@ body {
   text-transform: uppercase;
   font-size: 2em;
   line-height: 1.5em;
-  color: #703EBB;
+  /*color: #703EBB;*/
+  color: #fff;
   margin: 20px 0 ;
 }
 
@@ -56,12 +63,13 @@ body {
   line-height: 1.4em;
   font-style: italic;
   font-weight: bold;
-
-  color: #703EBB;
+  color: #fff;
+ /* color: #703EBB;*/
 }
 
 .form-login {
   width: 410px;
+  font-weight: bold;
   margin: 10px auto 30px;
   float: left;
 }
@@ -85,14 +93,15 @@ body {
 .form-check {
   font-size: 1.125em;
   line-height: 1.4em;
-  color: #703EBB;
+  color: #fff;
+ /* color: #703EBB;*/
   font-weight: bold;
   padding: 0 10px 0;
 }
-
 .form-check label{
   margin: 0;
 }
+
 .form-login-btn {
   background: rgba(153,50,205,0.1);
   border: 3px solid #9c27b0;
@@ -105,3 +114,197 @@ body {
   color: #fff;
   cursor: pointer;
 }
+
+/* pagina de register*/
+
+.register {
+  font-family: Roboto mono;
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #703EBB;
+  margin: 0 auto;
+  padding: 0 40px;
+
+}
+
+.register a {
+  font-size: 1.125em;
+  line-height: 1.4em;
+  text-decoration: none;
+  color: #703EBB;
+}
+
+.register h2 {
+  font-family: Roboto;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1.5em;
+  color: #703EBB;
+  margin: 20px 0;
+}
+
+.register h4 {
+  font-size: 1.125em;
+  line-height: 1.4em;
+  font-style: italic;
+  font-weight: bold;
+  color: #703EBB;
+}
+
+.form-register {
+  width: 410px;
+  margin: 10px auto 30px;
+  float: left;
+}
+
+  .form-register input {
+    width: 420px;
+    border: 3px solid #703ebb;
+    font-size: 1.5em;
+    font-style: italic;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #703EBB;
+    padding: 10px;
+    float: left;
+  }
+
+.form-label {
+  display: none;
+}
+
+.form-register-btn {
+  background: rgba(153,50,205,0.1);
+  border: 3px solid #9c27b0;
+  text-transform: uppercase;
+  font-family: Roboto, mono;
+  font-size: 1.5em;
+  width: 250px;
+  padding: 13px 0;
+  margin: 30px 0px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*  forget Password*/
+.forgetpassword {
+  font-family: Roboto mono;
+  width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #703EBB;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 300px;
+  padding: 0 30px;
+  background-color: rgba(154,250,50,0.09);
+}
+
+.forgetpassword h2 {
+  font-family: Roboto;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1.5em;
+  color: #703EBB;
+  margin: 20px 0;
+}
+
+.form-forgetpassword {
+  width: 410px;
+  margin: 10px auto 30px;
+  float: left;
+}
+
+  .form-forgetpassword input {
+    width: 420px;
+    border: 3px solid #703ebb;
+    font-size: 1.5em;
+    font-style: italic;
+    font-family: Roboto;
+    font-weight: bold;
+    color: #703EBB;
+    padding: 10px;
+    float: left;
+  }
+
+.form-label {
+  display: none;
+}
+
+.form-forgetpassword-btn {
+  background: rgba(153,50,205,0.1);
+  border: 3px solid #9c27b0;
+  text-transform: uppercase;
+  font-family: Roboto, mono;
+  font-size: 1.5em;
+  width: 130px;
+  padding: 13px 0;
+  margin: 30px 0px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*forgetpasswordconfirm*/
+.forgetpasswordconfirm {
+  font-family: Roboto mono;
+  width: 550px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #703EBB;
+  margin: 0 auto;
+  padding: 0 30px;
+  background-color: rgba(154,250,50,0.09);
+}
+  .forgetpasswordconfirm h2 {
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1.5em;
+    color: #703EBB;
+    margin: 20px 0;
+  }
+
+.mensagem p{
+  font-size: 1.125em;
+  line-height: 1.4em;
+  font-style: italic;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+}
+/* email confirm*/
+.confirmemail {
+  font-family: Roboto mono;
+  width: 550px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #703EBB;
+  margin: 0 auto 50px auto;
+  padding: 0 40px;
+  margin-bottom: 80px;
+  background-color: rgba(154,250,50,0.09);
+}
+
+.confirmemail h2 {
+  font-family: Roboto;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1.5em;
+  color: #fff;
+  margin: 20px 0;
+}
+.confirmemail p {
+  font-size: 1.125em;
+  line-height: 1.4em;
+  font-style: italic;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+  .confirmemail a{
+    font-weight: bolder;
+    text-decoration: none;
+
+  }

@@ -52,7 +52,7 @@ namespace Infrastructure.Configurations.Data
            //MODIFICANDO OS NOMES DAS TABELAS NO IDENTITY
             modelBuilder.Entity<ApplicationUser>(b =>
             {
-                b.ToTable("UsuarioIDentity").HasKey(b => b.Id);
+                b.ToTable("Usuario").HasKey(b => b.Id);
             });
             modelBuilder.Entity<IdentityUserClaim<string>>(b =>
             {
@@ -71,7 +71,7 @@ namespace Infrastructure.Configurations.Data
 
             modelBuilder.Entity<IdentityRole>(b =>
             {
-                b.ToTable("Papeis");
+                b.ToTable("TipoUsuario");
             });
 
             modelBuilder.Entity<IdentityRoleClaim<string>>(b =>
@@ -81,7 +81,7 @@ namespace Infrastructure.Configurations.Data
 
             modelBuilder.Entity<IdentityUserRole<string>>(b =>
             {
-                b.ToTable("PapeisUsuario");
+                b.ToTable("PerfilUsuario");
             });
         }
         private string GetStringConectionConfig()
